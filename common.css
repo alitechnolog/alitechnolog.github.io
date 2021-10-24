@@ -21,6 +21,7 @@
     align-items: center;
     max-width: 100%;
     width: 100%;
+    z-index: 2000;
 }
 
 #rec370731053 .js-store-parts-select-container .t-store__parts-switch-wrapper {
