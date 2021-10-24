@@ -4,10 +4,21 @@
     padding: 0;
 }
 
+#rec370731969 {
+    position: sticky;
+    top: 0;
+}
+
 @media screen and (max-width: 980px) {
     #rec370728660 .t228 {
         position: fixed !important;
         background-color: unset !important;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #rec370728660 .t228 {
+        
     }
 }
 
@@ -23,7 +34,11 @@
     width: 100%;
     z-index: 2000;
     white-space: nowrap;
-    /* overflow-x: auto; */
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+#rec370731053 .js-store-parts-select-container::-webkit-scrollbar {
+    display: none;
 }
 
 #rec370731053 .js-store-parts-select-container .t-store__parts-switch-wrapper {
