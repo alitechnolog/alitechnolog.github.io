@@ -7,6 +7,26 @@
 @media screen and (max-width: 980px) {
     #rec370728660 .t228 {
         position: fixed !important;
-        background-color: none !important;
+        background-color: unset !important;
     }
+}
+
+#rec370731053 .js-store-parts-select-container {
+    background-color: #000;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+}
+
+#rec370731053 .js-store-parts-select-container .t-store__parts-switch-wrapper {
+    margin: 0
+}
+
+#rec370731053 .js-store-parts-select-container .t-name {
+    color: unset;
 }
