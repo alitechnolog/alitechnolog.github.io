@@ -4,3 +4,9 @@
     padding: 0;
 }
 
+@media screen and (max-width: 980px) {
+    #rec370728660 .t228 {
+        position: fixed;
+        background-color: none;
+    }
+}
