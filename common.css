@@ -23,7 +23,7 @@
     width: 100%;
     z-index: 2000;
     white-space: nowrap;
-    overflow-x: auto;
+    /* overflow-x: auto; */
 }
 
 #rec370731053 .js-store-parts-select-container .t-store__parts-switch-wrapper {
