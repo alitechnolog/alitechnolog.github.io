@@ -14,6 +14,14 @@
         position: fixed !important;
         background-color: unset !important;
     }
+    #rec370728660 .t228__list_item {
+        display: inline-block;
+    }
+    #rec370728660 .t228__leftcontainer, 
+    #rec370728660 .t228__centercontainer, 
+    #rec370728660 .t228__rightcontainer {
+        padding: 0;
+    }
 }
 
 @media screen and (max-width: 640px) {
