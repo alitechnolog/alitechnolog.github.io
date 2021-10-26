@@ -184,7 +184,7 @@ body {
 .t-popup_show {
     z-index: 999999999 !important;
 }
-#rec1, #rec370122700:not(.t-rec[data-animationappear]), #rec370142548:not(.t-rec[data-animationappear]) {
+#rec1, #rec370122700:not([data-animationappear]), #rec370142548:not([data-animationappear]) {
     position: absolute;
     top: 0;
     width: 100%;
