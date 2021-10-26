@@ -258,7 +258,7 @@ a[href="#order"] {
         transform: translateY(-10px);
     }
     to {
-        transform: translateY(20px);
+        transform: translateY(5px);
     }
 }
 
