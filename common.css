@@ -252,3 +252,20 @@ a[href="#order"] {
 .t897 .t-section__topwrapper {
     margin: 10px;
 }
+
+@keyframes atArrow {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(20px);
+    }
+}
+
+#atCoverArrow {
+    enable-background: new 0 0 38.417 18.592;
+    animation-name: atArrow;
+    animation-iteration-count: infinite;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+}
