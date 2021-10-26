@@ -266,6 +266,6 @@ a[href="#order"] {
     enable-background: new 0 0 38.417 18.592;
     animation-name: atArrow;
     animation-iteration-count: infinite;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
     animation-direction: alternate;
 }
