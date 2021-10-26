@@ -104,7 +104,7 @@ body {
     position: fixed;
     width: 100%;
     z-index: 999999;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 #atTopMenu {
@@ -130,7 +130,7 @@ body {
 }
 
 #atCat {
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 
