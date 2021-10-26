@@ -82,7 +82,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     box-sizing: border-box;
     column-gap: 20px;
@@ -132,6 +132,10 @@ body {
 
 #atCat {
     margin: 10px auto;
+}
+
+#atNav {
+    column-gap: 50px;
 }
 
 
