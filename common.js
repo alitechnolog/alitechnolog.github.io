@@ -23,3 +23,22 @@ function catalogLink(event) {
 }
 
 setTimeout(initCatalog)
+
+document.body.addEventListener('click', e => { 
+    let btn = e.composedPath().find(i => i.hash === '#order')
+    if (!btn) return
+    
+    let product = btn
+    while ( product = product.parentElement ) 
+        if (product.dataset.productUid) break;
+    
+    if ( product === btn ) return
+
+    let sku = product.querySelector('.js-product-sku')
+    if (!sku) return alert('Товара нет в наличии')
+    
+    sku = sku.textContent.trim()
+    if (!sku) return alert('Товара нет в наличии')
+
+    Object.assign(document.createElement('a'), { target: '_blank', href: 'https://aliclick.shop/r/c/' + sku }).click()
+})
