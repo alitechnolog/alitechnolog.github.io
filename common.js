@@ -1,11 +1,9 @@
 console.log('script load')
 
-Object.assign(window, { initCatalog })
-
 function initCatalog() {
     let els = document.querySelectorAll('[data-storepart-link]')
 
-    if (!els.length) return requestAnimationFrame(initCatalog)
+    if (!els.length) return setTimeout(initCatalog)
 
     for (let e of els) {
         let a = document.createElement('a')
@@ -23,3 +21,5 @@ function catalogLink(event) {
     event.target.sourceLink.click()
     at('/catalog')
 }
+
+setTimeout(initCatalog)
