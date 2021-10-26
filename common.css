@@ -1,5 +1,8 @@
 body {
-    background-image: linear-gradient(180deg, rgba(23,0,132,1) 0%, rgba(23,0,132,0) 35%, rgba(0,0,0,1) 100%), url("https://static.tildacdn.com/tild3532-3139-4639-b939-386230313733/back.png"), url('https://static.tildacdn.info/tild3532-3139-4639-b939-386230313733/-/resize/20x/back.png');
+    background-image: 
+        linear-gradient(180deg, rgba(23,0,132,1) 0%, rgba(23,0,132,0) 35%, rgba(0,0,0,1) 100%), 
+        url("https://static.tildacdn.com/tild3532-3139-4639-b939-386230313733/back.png"), 
+        url('https://static.tildacdn.info/tild3532-3139-4639-b939-386230313733/-/resize/20x/back.png');
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
