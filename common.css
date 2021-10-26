@@ -239,6 +239,7 @@ a[href="#order"] {
     align-items: center;
     justify-content: center;
     background-color: #8332ff;
+    border-radius: 15px;
 }
 
 #rec370142548 .js-feed-post .t-name {
