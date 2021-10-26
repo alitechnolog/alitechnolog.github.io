@@ -222,7 +222,7 @@ a[href="#order"] {
         margin-left:2px !important; 
         margin-right:2px !important; 
 }
-.t-store__prod-popup__sku {
+.t-store__prod-popup__sku, .t-store__card__sku {
     display: none !important;
 }
 .t-store__prod-popup__price-wrapper {
