@@ -176,13 +176,13 @@ body {
     top: 140px;
 }*/
 
-#rec370521223 {
+/* #rec370521223 {
     min-height: 100vh;
-}
+} */
 
-.t-popup_show {
+/* .t-popup_show {
     z-index: 999999999 !important;
-}
+} */
 /* #rec1, #rec370122700:not([data-animationappear]), #rec370142548:not([data-animationappear]) {
     position: absolute;
     top: 0;

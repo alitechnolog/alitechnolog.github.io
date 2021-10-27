@@ -42,3 +42,4 @@ document.body.addEventListener('click', e => {
 
     Object.assign(document.createElement('a'), { target: '_blank', href: 'https://aliclick.shop/r/c/' + sku }).click()
 })
+
