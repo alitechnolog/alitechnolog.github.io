@@ -59,8 +59,10 @@ atScroll()
 atTopMenu.onclick = function(e) {
     if (!this.classList.contains('scroll')) return
     if (this.classList.contains('full')) {
+        this.style.justifyContent = ''
         return this.classList.remove('full')
     }
     this.classList.add('full')
+    requestAnimationFrame(i => this.style.justifyContent = 'flex-start')
     return false
 }
