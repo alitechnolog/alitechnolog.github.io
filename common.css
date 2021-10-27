@@ -147,7 +147,8 @@ body {
         justify-content: flex-start;
         flex-direction: column;
         row-gap: 10px;
-        transition: height 0.5s;
+        transition: all 0.5s;
+        transition-property: height, padding;
     }
     #atTopMenu:not(.scroll) {
         z-index: 0;
@@ -159,6 +160,7 @@ body {
 
     #atTopMenu.full {
         height: 100vh;
+        padding-top: 25%;
     }
 }
 @media screen and (max-height: 640px) {
