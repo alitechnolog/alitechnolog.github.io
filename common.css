@@ -329,4 +329,5 @@ body[data-code]::after {
     user-select: none;
     z-index: 999999999999;
     text-align: center;
+    padding: 20px;
 }
