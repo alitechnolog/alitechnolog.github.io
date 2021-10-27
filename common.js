@@ -51,7 +51,7 @@ function atScroll() {
     else atTopMenu.classList.remove('scroll', 'full')
 }
 
-if (atTopMenu) {
+if (window.atTopMenu) {
     window.onscroll = atScroll
     window.onresize = atScroll
     atScroll()
