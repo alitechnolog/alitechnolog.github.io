@@ -66,3 +66,62 @@ atTopMenu.onclick = function(e) {
     this.classList.add('full')
     return false
 }
+
+function fallbackCopyTextToClipboard(text, okCallback, errorCallback) {
+    var textArea = document.createElement("textarea");
+    textArea.value = text;
+    
+    // Avoid scrolling to bottom
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+  
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+  
+    try {
+        var successful = document.execCommand('copy');
+        if (successful) {
+            console.log('success copy [fallback]:', text)
+            if (typeof okCallback === 'function') okCallback(text)
+        } else {
+            console.log('error copy [fallback]:', text)
+            if (typeof errorCallback === 'function') errorCallback(text)
+        }
+    } catch (err) {
+        console.log('error copy [fallback]:', text, err)
+        if (typeof errorCallback === 'function') errorCallback(text)
+    }
+  
+    document.body.removeChild(textArea);
+  }
+  function copyTextToClipboard(text, okCallback = () => {}, errorCallback = () => {}) {
+    if (typeof text !== 'string') throw new TypeError('text to copy must be string, but exists ' + typeof text)
+    if (!navigator.clipboard) return fallbackCopyTextToClipboard(text);
+    
+    navigator.clipboard.writeText(text).then(function() {
+        console.log('success copy:', text)
+        if (typeof okCallback === 'function') okCallback(text)
+    }, function(err) {
+        console.log('error copy:', text, err)
+        if (typeof errorCallback === 'function') errorCallback(text)
+    });
+  }
+
+  document.body.addEventListener('click', e => {
+    let link = e.composedPath().find(i => i.hash === '#code')
+    if (!link) return
+    e.preventDefault()
+    let text = link.textContent.trim()
+    
+    text && copyTextToClipboard(text, () => {
+        document.body.dataset.code = text
+        setTimeout(i => { delete document.body.dataset.code }, 1000)
+    }, () => {
+        alert('Не удалось скопировать промокод')
+        delete document.body.dataset.code
+    })
+    
+    return false
+})
