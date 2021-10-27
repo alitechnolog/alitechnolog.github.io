@@ -57,7 +57,7 @@ if (window.atTopMenu) {
     atScroll()
 }
 
-atTopMenu.onclick = function(e) {
+window.atTopMenu && (atTopMenu.onclick = function(e) {
     if (!this.classList.contains('scroll')) return
     if (this.classList.contains('full')) {
         this.style.justifyContent = ''
@@ -66,7 +66,7 @@ atTopMenu.onclick = function(e) {
     requestAnimationFrame(i => this.style.justifyContent = 'center')
     this.classList.add('full')
     return false
-}
+})
 
 function fallbackCopyTextToClipboard(text, okCallback, errorCallback) {
     var textArea = document.createElement("textarea");
