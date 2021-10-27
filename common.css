@@ -150,8 +150,15 @@ body {
 }
 @media screen and (max-height: 640px) {
     #atTopMenu {
+        overflow: hidden;
+        justify-content: flex-start;
+    }
+    #atTopMenu:not(.scroll) {
         z-index: 0;
         background-color: unset;
+    }
+    #atTopMenu.scroll {
+        height: 60px;
     }
 }
 
