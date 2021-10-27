@@ -43,10 +43,15 @@ document.body.addEventListener('click', e => {
     Object.assign(document.createElement('a'), { target: '_blank', href: 'https://aliclick.shop/r/c/' + sku }).click()
 })
 
-window.onscroll = function() {
+function atScroll() {
     let vh = window.innerHeight / 100
     let y = window.scrollY
 
     if ( y >= 90 * vh) atTopMenu.classList.add('scroll')
     else atTopMenu.classList.remove('scroll')
 }
+
+
+window.onscroll = atScroll
+window.onresize = atScroll
+atScroll()
