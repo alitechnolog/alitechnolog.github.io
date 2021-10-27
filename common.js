@@ -62,7 +62,7 @@ atTopMenu.onclick = function(e) {
         this.style.justifyContent = ''
         return this.classList.remove('full')
     }
+    requestAnimationFrame(i => this.style.justifyContent = 'center')
     this.classList.add('full')
-    requestAnimationFrame(i => this.style.justifyContent = 'flex-start')
     return false
 }
