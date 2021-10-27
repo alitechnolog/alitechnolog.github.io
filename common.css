@@ -290,15 +290,15 @@ a[href="#code"] {
 }
 @media (hover: hover) {
     a[href="#code"]:hover::after {
-        content: 'нажмите чтобы скопировать';
+        content: 'нажми чтобы скопировать';
         position: absolute;
-        top: 100%;
+        top: 0;
         left: 50%;
         display: inline-block;
         background: #000;
         color:#fff;
         padding: 5px 10px;
-        transform: translateX(-50%);
+        transform: translate(-50%, -100%);
         font-family: 'Mediator';
         font-weight: 600;
         border-radius: 5px;
