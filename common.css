@@ -330,3 +330,7 @@ body[data-code]::after {
     z-index: 999999999999;
     text-align: center;
 }
+
+.t-store__empty-part-msg-wrapper, .t-store__error-msg-wrapper {
+    margin: 60px auto;
+}
