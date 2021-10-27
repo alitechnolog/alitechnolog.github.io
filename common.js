@@ -59,13 +59,8 @@ if (window.atTopMenu) {
 
 window.atTopMenu && (atTopMenu.onclick = function(e) {
     if (!this.classList.contains('scroll')) return
-    if (this.classList.contains('full')) {
-        this.style.justifyContent = ''
-        return this.classList.remove('full')
-    }
-    requestAnimationFrame(i => this.style.justifyContent = 'center')
-    this.classList.add('full')
-    return false
+    this.classList.toggle('full')
+    return this.classList.contains('full')
 })
 
 function fallbackCopyTextToClipboard(text, okCallback, errorCallback) {
