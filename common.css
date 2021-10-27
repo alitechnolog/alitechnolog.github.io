@@ -138,20 +138,15 @@ body {
 }
 
 @media screen and (max-width: 640px) {
-    #atTopMenu {
-        flex-direction: column;
-        row-gap: 10px;
-        z-index: 0;
-        background-color: unset;
-    }
+
     #atNav {
         flex-direction: column;
-    }
-}
-@media screen and (max-height: 640px) {
+    }    
     #atTopMenu {
         overflow: hidden;
         justify-content: flex-start;
+        flex-direction: column;
+        row-gap: 10px;
     }
     #atTopMenu:not(.scroll) {
         z-index: 0;
@@ -159,6 +154,12 @@ body {
     }
     #atTopMenu.scroll {
         height: 60px;
+    }
+}
+@media screen and (max-height: 640px) {
+    #atTopMenu {
+        z-index: 0;
+        background-color: unset;
     }
 }
 
