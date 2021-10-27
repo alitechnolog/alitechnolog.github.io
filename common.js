@@ -48,7 +48,7 @@ function atScroll() {
     let y = window.scrollY
 
     if ( y >= 90 * vh) atTopMenu.classList.add('scroll')
-    else atTopMenu.classList.remove('scroll')
+    else atTopMenu.classList.remove('scroll', 'full')
 }
 
 
