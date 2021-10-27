@@ -279,3 +279,51 @@ a[href="#order"] {
     animation-timing-function: ease-in-out;
     animation-direction: alternate;
 }
+
+a[href="#code"] {
+    display: inline-block;
+    font-weight: 300;
+    font-family: 'Russo One';
+    color: #8332ff !important;
+    padding: 5px;
+    position: relative;
+}
+@media (hover: hover) {
+    a[href="#code"]:hover::after {
+        content: 'нажмите чтобы скопировать';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        display: inline-block;
+        background: #000;
+        color:#fff;
+        padding: 5px 10px;
+        transform: translateX(-50%);
+        font-family: 'Mediator';
+        font-weight: 600;
+        border-radius: 5px;
+        white-space: nowrap;
+        z-index: 999999999999;
+        user-select: none;
+    }
+}
+
+body[data-code]::after {
+    content: 'Промокод ' attr(data-code) ' скопирован';
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background: #170084;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Russo One';
+    font-weight: 400;
+    font-size: 30px;
+    text-transform: uppercase;
+    user-select: none;
+    z-index: 999999999999;
+    text-align: center;
+}
