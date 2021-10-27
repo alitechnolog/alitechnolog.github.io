@@ -57,8 +57,8 @@ window.onresize = atScroll
 atScroll()
 
 atTopMenu.onclick = function(e) {
-    if (!this.classList.has('scroll')) return
-    if (this.classList.has('full')) {
+    if (!this.classList.contains('scroll')) return
+    if (this.classList.contains('full')) {
         return this.classList.remove('full')
     }
     this.classList.add('full')
