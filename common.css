@@ -23,12 +23,12 @@ body {
     color: #fff;
     user-select: none;
     transition: opacity .2s;
-    padding-top: 50vh;
+    padding-top: 25vh;
     cursor: pointer;
 }
 
 #atCoverTitle {
-    font-size: max(5vh, 5vw, 30px);
+    font-size: max(4vh, 4vw, 30px);
     font-weight: 300;
     text-transform: uppercase;
     display: flex;
@@ -40,7 +40,7 @@ body {
 #atCoverTitle span {
     display: inline-block;
     padding: 10px;
-    background-color: #8332ff;
+    background-color: #fd5430;
     margin: 5px 0;
 }
 
@@ -59,7 +59,7 @@ body {
 
 @media screen and (max-width: 980px) {
     #atCover {
-        padding-top: 40vh;
+        padding-top: 25vh;
         row-gap: 0;
     }
     /* #atCoverArrow {
@@ -106,6 +106,7 @@ body {
     top: 0;
     justify-content: space-around;
     background-color: #170084;
+    background-color: transparent;
 }
 
 #atBottomMenu {
@@ -177,7 +178,7 @@ body {
 }
 
 #atNav a:hover {
-    background-color: #8332ff;
+    background-color: #fd5430;
 }
 
 .js-store-parts-select-container {
