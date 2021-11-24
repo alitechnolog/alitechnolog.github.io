@@ -106,7 +106,7 @@ body {
     top: 0;
     justify-content: space-around;
     background-color: #170084;
-    background-color: transparent;
+    background-color: #000;
 }
 
 #atBottomMenu {
