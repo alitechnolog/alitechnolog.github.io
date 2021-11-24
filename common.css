@@ -170,6 +170,9 @@ body {
         z-index: 0;
         background-color: unset;
     }
+    #atCover {
+        padding-top: 15vh;
+    }
 }
 
 @media screen and (min-width: 1300px) {
