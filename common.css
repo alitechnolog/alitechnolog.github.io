@@ -157,6 +157,7 @@ body {
     }
     #atTopMenu.scroll {
         height: 60px;
+        background-color: #000;
     }
 
     #atTopMenu.full {
