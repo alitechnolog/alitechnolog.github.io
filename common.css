@@ -188,6 +188,9 @@ body {
 .js-store-parts-select-container span.t-text.t-text_xxs {
     display: none;
 }
+.t-store__parts-switch-wrapper {
+    display: none;
+}
 /*
 .t-store__prod-popup__container {
     padding: 80px 20px;
