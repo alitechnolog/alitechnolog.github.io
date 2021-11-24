@@ -191,6 +191,10 @@ body {
 .t-store__sort-select-wrapper {
     width: auto;
 }
+.js-store-filter {
+    margin-top: 40px;
+    margin-bottom: 0;
+}
 /*
 .t-store__prod-popup__container {
     padding: 80px 20px;
