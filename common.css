@@ -188,6 +188,9 @@ body {
 .t-store__parts-switch-wrapper {
     display: none;
 }
+.t-store__sort-select-wrapper {
+    width: auto;
+}
 /*
 .t-store__prod-popup__container {
     padding: 80px 20px;
