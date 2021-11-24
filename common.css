@@ -186,7 +186,7 @@ body {
 }
 
 .js-store-parts-select-container {
-    display: none;
+    /* display: none; */
 }
 /*
 .t-store__prod-popup__container {
