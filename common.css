@@ -185,8 +185,8 @@ body {
     background-color: #fd5430;
 }
 
-.js-store-parts-select-container {
-    /* display: none; */
+.js-store-parts-select-container span.t-text.t-text_xxs {
+    display: none;
 }
 /*
 .t-store__prod-popup__container {
