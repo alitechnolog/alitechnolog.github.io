@@ -175,11 +175,7 @@ body {
     }
 }
 
-@media screen and (min-width: 1300px) {
-    #atMenu, #atTopMenu, #atBottomMenu, #atNav, #atCat {
-        /* font-size: 20px; */
-    }
-}
+
 
 #atNav a:hover {
     background-color: #fd5430;
@@ -188,6 +184,7 @@ body {
 .js-store-parts-select-container span.t-text.t-text_xxs {
     display: none;
 }
+
 .t-store__parts-switch-wrapper {
     display: none;
 }
