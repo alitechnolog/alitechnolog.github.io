@@ -1251,9 +1251,9 @@ if (!navigator.clipboard) {
     
         render({ state }) {
             this.clear().append(
-                // make('h2', { class: 'heading', id: 'storehead', text: 'Выберите интересующую категорию' }),
+                make('h2', { class: 'heading', id: 'storehead', text: 'Выберите интересующую категорию' }),
                 makestorenav(),
-                // make('h2', { class: 'heading', text: 'Новые товары' }),
+                make('h2', { class: 'heading', text: 'Новые товары' }),
                 new ProductList()
             )
             this.onroute()
@@ -1262,7 +1262,7 @@ if (!navigator.clipboard) {
         onroute() {
             if (this.hidden = !this.routed) return
             const storeroute = getpath().length > 1
-            // this.children.storehead.hidden = storeroute
+            this.children.storehead.hidden = storeroute
             this.children.storenav.hidden = storeroute
         }
     
