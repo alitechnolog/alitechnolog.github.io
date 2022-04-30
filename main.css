@@ -451,7 +451,7 @@ html, body {
 }
 
 .product-gallery {
-    background-image: url("/img/logo.png");
+    background-image: url("https://static.tildacdn.com/tild3538-6164-4233-b530-393639643432/logo.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
