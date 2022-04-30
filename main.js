@@ -1008,7 +1008,8 @@ if (!navigator.clipboard) {
             this.state.items.append(...nodes)
 
             this.state.items.classList.toggle('six-list', 
-                this.state.items.childElementCount === 6
+                // this.state.items.childElementCount === 6 
+                location.pathname === '/'
             )
     
             const { menu, pager, loadmore } = this.state
