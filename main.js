@@ -386,7 +386,7 @@ if (!navigator.clipboard) {
         }
         // sku = random() ? '' : sku
         const link = '/product/' + id
-        const button = sku ? 'https://aliclick.shop/r/c/' + sku : link + '#order'
+        const button = sku ? 'https://aliclick.shop/r/c/' + sku : link + '#orderform'
         const buttonlabel = sku ? 'Купить' : 'Заказать'
         const buttontype = sku ? 'buy' : 'order'
 
@@ -1068,7 +1068,7 @@ if (!navigator.clipboard) {
                 requestAnimationFrame(i => {
                     imgswitch(this)
                     if (product.buttontype === 'order' && location.hash === '#order') {
-                        this.byid('order').scrollIntoView({ block: 'end' })
+                        this.byid('orderform').scrollIntoView({ block: 'center' })
                     }
                 })
             }
