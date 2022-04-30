@@ -344,7 +344,7 @@ if (!navigator.clipboard) {
 
     const makepart = ({ uid: id, title, descr, img, link } = {}) => {
         if ( !id || !title ) return
-        descr = random() ? 'с AliExpress' : 'на заказ'
+        descr ||= ''
         img = '/img/' + id + '.png'
         link = '/store/' + id
         return cache.parts.set(id, { id, title, descr, img, link, products: new Set() }).get(id)
@@ -368,7 +368,7 @@ if (!navigator.clipboard) {
         descr = descr ? descr.trim() : ''
         descr ||= id
         promo = promo ? promo.trim() : ''
-        promo = random() ? promo : 'ASD34'
+        // promo = random() ? promo : 'ASD34'
         title = (title.startsWith(descr) ? title.slice(descr.length) : title).trim()
         gallery = gallery ? JSON.parse(gallery) : []
         parts = parts ? JSON.parse(parts) : []
@@ -380,7 +380,7 @@ if (!navigator.clipboard) {
         }
         sku = random() ? '' : sku
         const link = '/product/' + id
-        const button = sku ? '//aliclick.ololo/' + sku : link + '#order'
+        const button = sku ? 'https://aliclick.shop/r/c/' + sku : link + '#order'
         const buttonlabel = sku ? 'Купить' : 'Заказать'
         const buttontype = sku ? 'buy' : 'order'
 
@@ -1239,7 +1239,7 @@ if (!navigator.clipboard) {
                 class: 's-store s-container',
                 state: { },
             })
-            assign(this.dataset, { routes: 'index store' })
+            assign(this.dataset, { routes: 'index store dev' })
             this.hidden = true
         }
     
@@ -1325,7 +1325,7 @@ if (!navigator.clipboard) {
             console.log('order', order)
             setTimeout(i => {
                 new Event('complete').send(e.target)
-                let alert = make('div', { class: 'fullscreen-alert', text: 'заявка отправлена' })
+                let alert = make('div', { class: 'fullscreen-alert', text: 'сервер не отвечает' })
                 alert.once('click', e => alert.remove())
                 this.append(alert)
                 setTimeout(i => alert.remove(), 2000);
