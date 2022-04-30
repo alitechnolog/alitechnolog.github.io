@@ -1377,7 +1377,7 @@ if (!navigator.clipboard) {
             name.value = order.name
             email.value = order.email
             phone.value = order.phone
-            comment.value = `
+            comment.value = `-
         Заказ: ${ order.title } #${ order.id }
         Ссылка: ${ order.link }
         Цена: ${ order.price }
