@@ -340,14 +340,14 @@ if (!navigator.clipboard) {
 
     const partsmap = ({ parts = [], partlinks = {} } = {}) => {
         return cache.partslist = parts.map(part => {
-            if (partlinks[uid]) {
-                part.descr = partlinks[uid].infotext ?? ''
-                part.img = partlinks[uid].infourl ?? ''
+            if (partlinks[part.uid]) {
+                part.descr = partlinks[part.uid].infotext ?? ''
+                part.img = partlinks[part.uid].infourl ?? ''
             }
             return makepart(part)
         }).filter(Boolean)
     }
-    
+
     const makepart = ({ uid: id, title, descr, img, link } = {}) => {
         if ( !id || !title ) return
         descr ||= ''
