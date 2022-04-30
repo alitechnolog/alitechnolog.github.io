@@ -823,15 +823,15 @@ if (!navigator.clipboard) {
     function makeform() {
         let iname = make('input', { 
             id: 'ordername', type: 'text', class: 'inp product-input',
-            maxLength: 50,
+            maxLength: 50, placeholder: 'ваше имя',
         })
         let iemail = make('input', { 
             id: 'orderemail', type: 'text', class: 'inp product-input',
-            maxLength: 100, 
+            maxLength: 100, placeholder: 'укажите ваш e-mail',
         })
         let icomment = make('textarea', {
-            id: 'ordercomment', class: 'inp inp-area product-input',
-            maxLength: 600,
+            id: 'ordercomment', class: 'inp inp-area product-input', 
+            maxLength: 600, placeholder: 'дополнительная информация к заказу',
         })
     
         let lname = make('label', { text: 'Имя', for: 'ordername', class: 'product-form-label' })
