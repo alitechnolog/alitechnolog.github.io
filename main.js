@@ -338,10 +338,16 @@ if (!navigator.clipboard) {
 
     // STORE PARTS
 
-    const partsmap = ({ parts = [] } = {}) => {
-        return cache.partslist = parts.map(makepart).filter(Boolean)
+    const partsmap = ({ parts = [], partlinks = {} } = {}) => {
+        return cache.partslist = parts.map(part => {
+            if (partlinks[uid]) {
+                part.descr = partlinks[uid].infotext ?? ''
+                part.img = partlinks[uid].infourl ?? ''
+            }
+            return makepart(part)
+        }).filter(Boolean)
     }
-
+    
     const makepart = ({ uid: id, title, descr, img, link } = {}) => {
         if ( !id || !title ) return
         descr ||= ''
