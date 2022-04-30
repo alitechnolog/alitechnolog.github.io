@@ -917,7 +917,7 @@ if (!navigator.clipboard) {
                 class: 's-product-list',
                 state: { slice: [] },
             })
-            assign(this.dataset, { routes: 'index store' })
+            assign(this.dataset, { routes: 'index store dev' })
             this.hidden = true
             this.events = 'click'
         }
