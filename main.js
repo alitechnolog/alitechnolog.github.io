@@ -829,6 +829,12 @@ if (!navigator.clipboard) {
             id: 'orderemail', type: 'text', class: 'inp product-input',
             maxLength: 100, placeholder: 'укажите ваш e-mail',
         })
+
+        let iphone = make('input', { 
+            id: 'orderphone', type: 'tel', class: 'inp product-input',
+            maxLength: 100, placeholder: '+7',
+        })
+
         let icomment = make('textarea', {
             id: 'ordercomment', class: 'inp inp-area product-input', 
             maxLength: 600, placeholder: 'дополнительная информация к заказу',
@@ -836,6 +842,7 @@ if (!navigator.clipboard) {
     
         let lname = make('label', { text: 'Имя', for: 'ordername', class: 'product-form-label' })
         let lemail = make('label', { text: 'E-mail', for: 'orderemail', class: 'product-form-label' })
+        let lphone = make('label', { text: 'Номер телефона', for: 'orderphone', class: 'product-form-label' })
         let lcomment = make('label', { text: 'Комментарий', for: 'ordercomment', class: 'product-form-label' })
     
         let clearbutton = make('button', { type: 'reset', id: 'orderclear', text: 'Очистить', class: 'btn product-form-button' })
@@ -850,6 +857,7 @@ if (!navigator.clipboard) {
             }),
                     lname, iname,
                     lemail, iemail,
+                    lphone, iphone,
                     lcomment, icomment,
                     clearbutton, orderbutton
         )
