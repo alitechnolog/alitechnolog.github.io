@@ -1067,7 +1067,7 @@ if (!navigator.clipboard) {
                 
                 requestAnimationFrame(i => {
                     imgswitch(this)
-                    if (product.buttontype === 'order' && location.hash === '#order') {
+                    if (product.buttontype === 'order' && location.hash === '#orderform') {
                         this.byid('orderform').scrollIntoView({ block: 'center' })
                     }
                 })
