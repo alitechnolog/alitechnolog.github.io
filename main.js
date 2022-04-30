@@ -826,7 +826,7 @@ if (!navigator.clipboard) {
             maxLength: 50, placeholder: 'ваше имя',
         })
         let iemail = make('input', { 
-            id: 'orderemail', type: 'text', class: 'inp product-input',
+            id: 'orderemail', type: 'email', class: 'inp product-input',
             maxLength: 100, placeholder: 'укажите ваш e-mail',
         })
 
