@@ -199,7 +199,7 @@ if (!navigator.clipboard) {
             slice: slice | 0,
         });
     
-        if (sort) params.append('sort', sort)
+        if (sort) params.append('sort[' + sort + ']', order || 'desc')
     
         let response = await fetch(uri.getproductslist + params)
         return await response.json()
@@ -397,7 +397,7 @@ if (!navigator.clipboard) {
         }).get(id)
     }
 
-    async function slice({ partid, count, slice, min, max, sort = '', order = '' }, id) {
+    async function slice({ partid, count, slice, min, max, sort = 'created', order = 'desc' }, id) {
         count |= 0, slice |= 0, min |= 0, (max |= 0) || (min = 0)
 
         if ( max < min || min > max ) throw RangeError('store.slice price filter invalid')
@@ -1251,7 +1251,7 @@ if (!navigator.clipboard) {
     
         render({ state }) {
             this.clear().append(
-                make('h2', { class: 'heading', id: 'storehead', text: 'Выберите интересующую категорию' }),
+                // make('h2', { class: 'heading', id: 'storehead', text: 'Выберите интересующую категорию' }),
                 makestorenav(),
                 // make('h2', { class: 'heading', text: 'Новые товары' }),
                 new ProductList()
@@ -1262,7 +1262,7 @@ if (!navigator.clipboard) {
         onroute() {
             if (this.hidden = !this.routed) return
             const storeroute = getpath().length > 1
-            this.children.storehead.hidden = storeroute
+            // this.children.storehead.hidden = storeroute
             this.children.storenav.hidden = storeroute
         }
     
