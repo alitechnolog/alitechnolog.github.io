@@ -1006,6 +1006,10 @@ if (!navigator.clipboard) {
             let nodes = e ? slice : s.list.map(i => cache.get(i)).flat()
             nodes = nodes.map(i => new ProductItem(i))
             this.state.items.append(...nodes)
+
+            this.state.items.classList.toggle('six-list', 
+                this.state.items.childElementCount === 6
+            )
     
             const { menu, pager, loadmore } = this.state
             menu.hidden = getpath().length < 2 
@@ -1031,7 +1035,7 @@ if (!navigator.clipboard) {
     
     function initialstate(root) {
         const part = partid()
-        const state = { count: part ? 12 : 3, partid: part, slice: 1, id: null, list: [], elastic: null }
+        const state = { count: part ? 12 : 6, partid: part, slice: 1, id: null, list: [], elastic: null }
         setstate(root, state)
     }
     
