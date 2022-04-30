@@ -1060,7 +1060,7 @@ if (!navigator.clipboard) {
                 requestAnimationFrame(i => {
                     imgswitch(this)
                     if (product.buttontype === 'order' && location.hash === '#order') {
-                        this.byid('order').scrollIntoView()
+                        this.byid('order').scrollIntoView({ block: 'center' })
                     }
                 })
             }
