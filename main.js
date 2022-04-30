@@ -813,6 +813,8 @@ if (!navigator.clipboard) {
     
     function validate(form) {
         let { orderemail: email, ordername: name } = form.elements
+        email = email.value
+        name = name.value
         email = (email ?? '').trim()
         name = (name ?? '').trim()
 
