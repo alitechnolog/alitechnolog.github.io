@@ -1211,7 +1211,8 @@ if (!navigator.clipboard) {
         return make('a', { 
             href: '/', 
             text: 'AliTechnology',
-            class: 's-logo h-nav-link'
+            class: 's-logo h-nav-link',
+            dataset: { prefix: 'Ali'}
         })
     }
     
