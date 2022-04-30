@@ -187,9 +187,9 @@ if (!navigator.clipboard) {
 // API.JS
 {
     const uri = {
-        getproductslist: './data.php?route=getproductslist&getparts=true&',
-        getproduct: './data.php?route=getproduct&',
-        getproducttabs: './data.php?route=getproducttabs&'
+        getproductslist: '//store.tildacdn.com/api/getproductslist/?getparts=true&',
+        getproduct: '//store.tildacdn.com/api/getproduct/?',
+        getproducttabs: '//store.tildacdn.com/api/getproducttab/?'
     }
     
     async function getproductslist({ partid, count, slice, min, max, sort, order } = {}) {
