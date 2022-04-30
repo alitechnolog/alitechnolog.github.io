@@ -384,7 +384,7 @@ if (!navigator.clipboard) {
         for (const partid of parts) {
             cache.parts.get(partid)?.products?.add?.(id)
         }
-        sku = random() ? '' : sku
+        // sku = random() ? '' : sku
         const link = '/product/' + id
         const button = sku ? 'https://aliclick.shop/r/c/' + sku : link + '#order'
         const buttonlabel = sku ? 'Купить' : 'Заказать'
