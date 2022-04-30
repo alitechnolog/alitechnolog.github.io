@@ -1067,10 +1067,12 @@ if (!navigator.clipboard) {
                 
                 requestAnimationFrame(i => {
                     imgswitch(this)
-                    if (product.buttontype === 'order' && location.hash === '#orderform') {
-                        this.byid('orderform').scrollIntoView({ block: 'center' })
-                    }
                 })
+
+
+                if (product.buttontype === 'order' && location.hash === '#orderform') {
+                    setTimeout(i => this.byid('orderform').scrollIntoView({ block: 'center' }), 300)
+                }
             }
         }
     
