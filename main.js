@@ -1253,7 +1253,7 @@ if (!navigator.clipboard) {
             this.clear().append(
                 // make('h2', { class: 'heading', id: 'storehead', text: 'Выберите интересующую категорию' }),
                 makestorenav(),
-                make('h2', { class: 'heading', text: 'Новые товары' }),
+                // make('h2', { class: 'heading', text: 'Новые товары' }),
                 new ProductList()
             )
             this.onroute()
