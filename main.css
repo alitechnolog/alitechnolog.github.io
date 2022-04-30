@@ -333,6 +333,10 @@ html, body {
     gap: 1rem;
 }
 
+.product-list.six-list {
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+}
+
 .product-list[data-view="line"] {
     grid-template-columns: 1fr;
     gap: 0;
