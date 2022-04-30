@@ -351,7 +351,7 @@ if (!navigator.clipboard) {
     const makepart = ({ uid: id, title, descr, img, link } = {}) => {
         if ( !id || !title ) return
         descr ||= ''
-        img = '/img/' + id + '.png'
+        img ||= ''
         link = '/store/' + id
         return cache.parts.set(id, { id, title, descr, img, link, products: new Set() }).get(id)
     }
