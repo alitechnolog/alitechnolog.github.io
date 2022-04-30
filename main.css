@@ -273,7 +273,7 @@ html, body {
         grid-template-columns: 1fr;
     }
     .s-nav-link:nth-child(2n) {
-        align-items: end;
+        align-items: flex-end;
         background-position-x: left;
     }
     .s-nav-link:hover:nth-child(2n) {
