@@ -628,7 +628,7 @@ html, body {
     position: relative;
     align-items: flex-start;
     /* outline: 1px solid red; */
-    height: 400px;
+    min-height: 400px;
 }
 
 @media (max-width: 1000px) {
