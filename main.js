@@ -372,7 +372,7 @@ if (!navigator.clipboard) {
     } = {}) => {
         if ( !id || !title ) return
         descr = descr ? descr.trim() : ''
-        descr ||= id
+        // descr ||= id
         promo = promo ? promo.trim() : ''
         // promo = random() ? promo : 'ASD34'
         title = (title.startsWith(descr) ? title.slice(descr.length) : title).trim()
