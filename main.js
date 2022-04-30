@@ -1035,7 +1035,7 @@ if (!navigator.clipboard) {
     
     function initialstate(root) {
         const part = partid()
-        const state = { count: part ? 12 : 6, partid: part, slice: 1, id: null, list: [], elastic: null }
+        const state = { count: part ? 12 : 6, partid: part || '356369632581', slice: 1, id: null, list: [], elastic: null }
         setstate(root, state)
     }
     
