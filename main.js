@@ -189,7 +189,7 @@ if (!navigator.clipboard) {
     const uri = {
         getproductslist: '//store.tildacdn.com/api/getproductslist/?getparts=true&',
         getproduct: '//store.tildacdn.com/api/getproduct/?',
-        getproducttabs: '//store.tildacdn.com/api/getproducttab/?'
+        getproducttabs: '//store.tildacdn.com/api/getproducttabs/?'
     }
     
     async function getproductslist({ partid, count, slice, min, max, sort, order } = {}) {
