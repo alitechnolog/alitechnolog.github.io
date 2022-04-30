@@ -773,9 +773,9 @@ if (!navigator.clipboard) {
             e.preventDefault()
             e.stopPropagation()
             let form = e.target
-            let valid = validate(form)
-            if (!valid) return assign(new Event('erroralert', { bubbles: true }), { 
-                text: 'некорректный e-mail'
+            let invalid = validate(form)
+            if (invalid) return assign(new Event('erroralert', { bubbles: true }), { 
+                text: invalid == 'email' ? 'некорректный e-mail' : 'укажите ваше имя'
              }).send(form)
             sendform(e.target, this.state.data)
         }
@@ -785,15 +785,17 @@ if (!navigator.clipboard) {
         let name = form.children.ordername?.value?.trim?.() ?? ''
         let email = form.children.orderemail?.value?.trim?.() ?? ''
         let comment = form.children.ordercomment?.value?.trim?.() ?? ''
+        let phone = form.children.orderphone?.value?.trim?.() ?? ''
         name ||= 'не указано'
         comment ||= 'не указан'
+        phone ||= 'не указан'
         if (!email) return assign(new Event('erroralert', { bubbles: true }), { 
             text: 'что-то пошло не так'
          }).send(form)
     
         let order = {
             title: data.title, id: data.id, price: data.price, link: resolveuri(data.link),
-            email, name, comment
+            email, name, comment, phone
         }
     
         assign(new Event('order', { bubbles: true }), { order }).send(form)
@@ -810,14 +812,39 @@ if (!navigator.clipboard) {
     }
     
     function validate(form) {
-        let email = (form.children.orderemail?.value ?? '').trim()
-        if (!email) return console.log('email empty')
-        if (email.length > 100) return console.log('email length overflow')
+        let { orderemail: email, ordername: name } = form.elements
+        email = (email ?? '').trim()
+        name = (name ?? '').trim()
+
+        if (!email) {
+            console.error('empty email')
+            return 'email'
+        }
+        if (email.length > 100) {
+            console.error('email length overflow')
+            return 'email'
+        }
+        
         email = email.split('@')
-        if (email.length != 2) return console.log('invalid email')
-        let [name, host] = email
-        if (!name || !host) return console.log('invalid email')
-        return true
+        
+        if (email.length != 2) {
+            console.error('invalid email @')
+            return 'email'
+        }
+        let [login, host] = email
+        if (!login || !host || host.length < 3) {
+            console.error('empty host or login')
+            return 'email'
+        }
+        host = host.split('.')
+        if (host.length < 2) {
+            console.error('invalid host')
+            return 'email'
+        }
+        if (!name) {
+            console.error('invalid name')
+            return 'name'
+        }
     }
     
     function makeform() {
@@ -1340,13 +1367,38 @@ if (!navigator.clipboard) {
         onorder(e) {
             let order = e.order
             console.log('order', order)
-            setTimeout(i => {
+
+            let form = document.all.allrecords.select('form')
+            if (!form) return new assign(Event('erroralert'), { text: 'произошла ошибка' }).send(this)
+
+            let { name, email, phone, comment } = form.elements
+            name.value = order.name
+            email.value = order.email
+            phone.value = order.phone
+            comment.value = `
+        Заказ: ${ order.title } #${ order.id }
+        Ссылка: ${ order.link }
+        Цена: ${ order.price }
+
+        Комментарий к заказу: ${ order.comment }`
+            let submit = form.select('[type="submit"]')
+            let onsuccess = form.select('.js-successbox')
+            onsuccess.text = ''
+
+            let i = setInterval(() => {
+                if (!onsuccess.text) return console.log('no complete')
+                console.log('ok complete')
+                clearInterval(i)
+                onsuccess.text = ''
                 new Event('complete').send(e.target)
-                let alert = make('div', { class: 'fullscreen-alert', text: 'сервер не отвечает' })
+                let alert = make('div', { class: 'fullscreen-alert', text: 'заявка отправлена' })
                 alert.once('click', e => alert.remove())
                 this.append(alert)
-                setTimeout(i => alert.remove(), 2000);
-            }, 3000)
+            }, 1000)
+
+            submit.click()
+            console.log('was submit', order)
+
         }
     
     })
